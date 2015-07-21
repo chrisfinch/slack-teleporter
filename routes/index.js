@@ -18,11 +18,7 @@ var responseToRequest = function(req, res, next) {
 
     if (url) {
 
-    console.log('1');
-
         TeleporterApi.getUrls(url).then(function (response) {
-
-console.log('3');
 
             request.post({
                 url: SLACK_WEBHOOK_URL,
@@ -34,8 +30,6 @@ console.log('3');
 
             res.status(200).send();
         }, function (error) {
-
-            console.log("error??: ", error)
 
             request.post({
                 url: SLACK_WEBHOOK_URL,
