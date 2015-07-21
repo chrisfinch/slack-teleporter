@@ -33,6 +33,8 @@ var responseToRequest = function(req, res, next) {
             res.status(200).send();
         }, function (error) {
 
+            console.log("error??: ", error)
+
             request.post({
                 url: SLACK_WEBHOOK_URL,
                 json: true,
