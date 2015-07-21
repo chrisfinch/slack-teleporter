@@ -20,7 +20,7 @@ var responseToRequest = function(req, res, next) {
 
         TeleporterApi.getUrls(url).then(function resolve (response) {
 
-            console.log(reponse);
+            console.log("response: ", reponse);
 
             request.post({
                 url: SLACK_WEBHOOK_URL,
@@ -33,7 +33,7 @@ var responseToRequest = function(req, res, next) {
             res.setStatus(200).send();
         }, function reject (error) {
 
-            console.log(error);
+            console.log("error", error);
 
             res.setStatus(500).send(error);
         });
