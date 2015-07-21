@@ -30,7 +30,7 @@ var responseToRequest = function(req, res, next) {
                 }
             });
 
-            res.setStatus(200).send();
+            res.status(200).send();
         }, function (error) {
 
             request.post({
@@ -41,11 +41,11 @@ var responseToRequest = function(req, res, next) {
                 }
             });
 
-            res.setStatus(500).send(error);
+            res.status(500).send();
         });
     } else {
 
-        res.setStatus(500).send(error);
+        res.status(500).send("Did you post a url?");
     }
 
 
