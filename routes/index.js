@@ -10,11 +10,11 @@ var SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/T07K8BAMP/B07USMSES/gK
 
 var responseToRequest = function(req, res, next) {
 
-    console.log(req);
-
     var URL_REGEX = /[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
 
     var url = req.body && req.body.text ? req.body.text.match(URL_REGEX)[0] : false;
+
+    console.log(req.body, url);
 
     res.setHeader('Content-Type', 'application/json');
 
