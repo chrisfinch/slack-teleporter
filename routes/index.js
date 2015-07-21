@@ -8,4 +8,10 @@ router.get('/teleport', function(req, res, next) {
 
 });
 
+router.post('/teleport', function(req, res, next) {
+
+  console.log('request');
+
+});
+
 module.exports = router;
