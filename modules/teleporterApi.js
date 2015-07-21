@@ -9,8 +9,6 @@ var TeleporterApi = function () {
 
     function getUrls (queryUrl) {
 
-        console.log('looking for: ', queryUrl, encodeURIComponent(queryUrl))
-
         return Q.Promise(function (resolve, reject) {
             request.get({
                 url: TELEPORTER_API_BASE_URL + 'pages',
@@ -22,7 +20,7 @@ var TeleporterApi = function () {
                 //   'sendImmediately': false
                 // },
                 qs: {
-                    'uri': encodeURIComponent(queryUrl)
+                    'uri': queryUrl
                 }
             }, function(error, response, body) {
 
