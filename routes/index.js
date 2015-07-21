@@ -14,13 +14,13 @@ var responseToRequest = function(req, res, next) {
 
     var url = req.body && req.body.text ? req.body.text.match(URL_REGEX)[0] : false;
 
-    console.log(req.body, url);
-
     res.setHeader('Content-Type', 'application/json');
 
     if (url) {
 
         TeleporterApi.getUrls(url).then(function resolve (response) {
+
+            console.log(reponse);
 
             request.post({
                 url: SLACK_WEBHOOK_URL,
@@ -32,6 +32,8 @@ var responseToRequest = function(req, res, next) {
 
             res.setStatus(200).send();
         }, function reject (error) {
+
+            console.log(error);
 
             res.setStatus(500).send(error);
         });
