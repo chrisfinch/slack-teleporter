@@ -24,7 +24,7 @@ var responseToRequest = function(req, res, next) {
                 url: SLACK_WEBHOOK_URL,
                 json: true,
                 body: {
-                    'text': TeleportResultFormatter.formatToSlackUrlString(response.alternates).join(', ')
+                    'text': "OK, here are some other versions: " + TeleportResultFormatter.formatToSlackUrlString(response.alternates).join(', ')
                 }
             });
 
