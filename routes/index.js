@@ -33,7 +33,13 @@ var responseToRequest = function(req, res, next) {
             res.setStatus(200).send();
         }, function reject (error) {
 
-            console.log("error", error);
+            request.post({
+                url: SLACK_WEBHOOK_URL,
+                json: true,
+                body: {
+                    'text': "I couldn't find that url in teleporter :-("
+                }
+            });
 
             res.setStatus(500).send(error);
         });
