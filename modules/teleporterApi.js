@@ -24,8 +24,6 @@ var TeleporterApi = function () {
                 }
             }, function(error, response, body) {
 
-                console.log('tp: ', response.statusCode, body);
-
                 if (response.statusCode === 200 || error) {
                     resolve(JSON.parse(body));
                 } else {
