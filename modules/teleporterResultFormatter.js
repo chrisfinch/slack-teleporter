@@ -2,7 +2,8 @@
 // <https://alert-system.com/alerts/1234|Click here>
 
 function formatLink (alternate) {
-    return '<' + alternate.uri + '|' + alternate.page.system + ':' + alternate.page.component + '>';
+    console.log('called')
+    return '<' + alternate.uri + '|' + alternate.page.component + ':' + alternate.page.facet + '>';
 }
 
 module.exports = {
@@ -15,5 +16,6 @@ module.exports = {
         });
 
         return links;
-    }
+    },
+    formatLink: formatLink
 }
